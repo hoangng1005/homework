@@ -1,0 +1,32 @@
+    public static int[] addToArray(int[] arrInput, int addValue) {
+        int[] resultArray = new int[arrInput.length + 1];
+        for (int i = 0; i < arrInput.length; i++) {
+            resultArray[i] = arrInput[i];
+        }
+        resultArray[resultArray.length - 1] = addValue;
+        return resultArray;
+    }
+
+    public static int[] insertToArray(int[] arrInput, int pos, int number){
+        for (int i = arrInput.length - 1; i > pos; i--){
+            arrInput[i] = arrInput[ i - 1];
+        }
+        arrInput[pos] = number;
+        return arrInput;
+    }
+
+    public static int[] removeToArray(int[] arrInput, int pos){
+        if (arrInput == null ||  pos < 0 || pos >= arrInput.length){
+            return arrInput;
+        }
+        int[] anotherArray = new int[arrInput.length - 1];
+        for (int i = 0, k = 0; i < arrInput.length; i++) {
+            if (i == pos) {
+                continue;
+            }
+            anotherArray[k++] = arrInput[i];
+        }
+        return anotherArray;
+    }
+
+    
